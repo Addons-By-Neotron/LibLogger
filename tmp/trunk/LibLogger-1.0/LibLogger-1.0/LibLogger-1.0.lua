@@ -51,15 +51,16 @@ After embedding you will be able to use the following methods:
   There is also an optional performance mode that undefine the logger
   methods you don't need for the current log level:
 
-  MyAddon:SetPerformanceMode(true)
 
-  When you use the performance mode you need to first verify that the
-  method is present, i.e:
+  Logging Optimization:
 
-  if log.trace then log.trace("Trace Message") end
+  For best performance, especially if you do calculations or evaluations in your log statement,
+  enclose it with an if statement like this:
 
-  The reason for using performance mode is that it allows you to do
-  calculations in debug messages without having to worry about the
+  if log.hasTrace then log.trace("Trace Message") end
+
+  The reason for using this optimization mode is that it allows you to
+  do calculations in debug messages without having to worry about the
   execution costs (i.e the code is only evaluated when it's actually
   needed).  This is also cleaner than doing a comparision against the
   logging level.
@@ -108,31 +109,31 @@ local function spam(...) LogMessage(logLevels.SPAM, ...) end
 
 function lib:SetLogLevel(level)
    local logLevel = tonumber(level)
-   if self.clearUnusedLoggers then 
-      if logLevel >= logLevels.ERROR then self.error = error else self.error = nil end
-      if logLevel >= logLevels.WARN  then self.warn = warn else self.warn = nil end
-      if logLevel >= logLevels.INFO  then self.info = info else self.info = nil end
-      if logLevel >= logLevels.DEBUG then self.debug = debug else self.debug = nil end
-      if logLevel >= logLevels.TRACE then self.trace = trace else self.trace = nil end
-      if logLevel >= logLevels.SPAM  then self.spam = spam else self.spam = nil end
-   else
-      self.error = error     self.warn = warn 
-      self.info = info       self.debug = debug 
-      self.trace = trace     self.spam = spam 
-   end
-   self.logLevel = logLevel
+   if logLevel >= logLevels.ERROR then self.hasError = error else self.hasError = nil end
+   if logLevel >= logLevels.WARN  then self.hasWarn = warn else self.hasWarn = nil end
+   if logLevel >= logLevels.INFO  then self.hasInfo = info else self.hasInfo = nil end
+   if logLevel >= logLevels.DEBUG then self.hasDebug = debug else self.hasDebug = nil end
+   if logLevel >= logLevels.TRACE then self.hasTrace = trace else self.hasTrace = nil end
+   if logLevel >= logLevels.SPAM  then self.hasSpam = spam else self.hasSpam = nil end
+   addon.logLevel = logLevel
 end
 
 function lib:GetLogLevel() return self.logLevel end
 
 function lib:SetPerformanceMode(val)
-   self.clearUnusedLoggers = val
 end
+
 local embeddables = { "GetLogLevel", "SetLogLevel", "logLevels", "SetPerformanceMode" }
 
 function lib:Embed(addon)
    for _,key in ipairs(embeddables) do
       addon[key] = lib[key]
+      addon.error = error
+      addon.warn = warn 
+      addon.info = info
+      addon.debug = debug 
+      addon.trace = trace
+      addon.spam = spam 
    end
    if not addon.logLevel then
       addon:SetLogLevel(logLevels.INFO)
