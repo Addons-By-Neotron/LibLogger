@@ -115,7 +115,7 @@ function lib:SetLogLevel(level)
    if logLevel >= logLevels.DEBUG then self.hasDebug = debug else self.hasDebug = nil end
    if logLevel >= logLevels.TRACE then self.hasTrace = trace else self.hasTrace = nil end
    if logLevel >= logLevels.SPAM  then self.hasSpam = spam else self.hasSpam = nil end
-   addon.logLevel = logLevel
+   self.logLevel = logLevel
 end
 
 function lib:GetLogLevel() return self.logLevel end
