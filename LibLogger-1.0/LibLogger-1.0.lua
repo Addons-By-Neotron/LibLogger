@@ -80,7 +80,7 @@ local logPrefix = {
 }
 
 local MAJOR = "LibLogger-1.0"
-local MINOR = string.match("$Revision$", "[0-9]+")
+local MINOR = tonumber(("$Revision$"):match("(%d+)")) + 90000
 
 local lib = LibStub:NewLibrary(MAJOR, MINOR)
 
