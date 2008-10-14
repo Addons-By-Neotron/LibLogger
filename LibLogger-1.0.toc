@@ -1,4 +1,4 @@
-## Interface: 20400
+## Interface: 30000
 ## Title: Lib: Logger-1.0
 ## Notes: Simple library that handles multiple levels of logging.
 ## Author: NeoTron
