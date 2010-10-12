@@ -1,4 +1,4 @@
-## Interface: 30300
+## Interface: 40000
 ## X-Compatible-With: 40000
 ## LoadOnDemand: 1
 ## Title: Lib: Logger-1.0
