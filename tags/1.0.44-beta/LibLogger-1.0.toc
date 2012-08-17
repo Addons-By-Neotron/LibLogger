@@ -1,0 +1,12 @@
+## Interface: 50001
+## X-Compatible-With: 50001
+## LoadOnDemand: 1
+## Title: Lib: Logger-1.0
+## Notes: Simple library that handles multiple levels of logging.
+## Author: NeoTron
+## eMail: neotron@gmail.com
+## X-Category: Library
+## X-License: GPLv3
+
+LibStub.lua
+LibLogger-1.0\lib.xml
