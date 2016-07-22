@@ -1,5 +1,5 @@
-## Interface: 60000
-## X-Compatible-With: 60000
+## Interface: 70000
+## X-Compatible-With: 70000
 ## LoadOnDemand: 1
 ## Title: Lib: Logger-1.0
 ## Notes: Simple library that handles multiple levels of logging.
