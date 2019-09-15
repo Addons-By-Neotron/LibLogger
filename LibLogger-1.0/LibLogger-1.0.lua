@@ -80,7 +80,7 @@ local logPrefix = {
 }
 
 local MAJOR = "LibLogger-1.0"
-local MINOR = tonumber(("$Revision$"):match("(%d+)")) + 90000
+local MINOR = 100000
 
 local lib = LibStub:NewLibrary(MAJOR, MINOR)
 
