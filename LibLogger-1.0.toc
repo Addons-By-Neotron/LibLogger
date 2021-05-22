@@ -1,7 +1,9 @@
-## Interface: 80200
-## X-Compatible-With: 70000
+## Interface: 90005
+## Interface-Classic: 11306
+## Interface-BCC: 20501
+## Interface-Retail: 90005
 ## LoadOnDemand: 1
-## Title: Lib: Logger-1.0
+## Title: Lib: Logger-1.0.@project-revision@
 ## Notes: Simple library that handles multiple levels of logging.
 ## Author: NeoTron
 ## eMail: neotron@gmail.com
