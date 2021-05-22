@@ -2,6 +2,7 @@
 ## Interface-Classic: 11306
 ## Interface-BCC: 20501
 ## Interface-Retail: 90005
+## X-Curse-Project-ID: 14297
 ## LoadOnDemand: 1
 ## Title: Lib: Logger-1.0
 ## Notes: Simple library that handles multiple levels of logging.
