@@ -3,12 +3,13 @@
 ## Interface-BCC: 20501
 ## Interface-Retail: 90005
 ## LoadOnDemand: 1
-## Title: Lib: Logger-1.0.@project-revision@
+## Title: Lib: Logger-1.0
 ## Notes: Simple library that handles multiple levels of logging.
 ## Author: NeoTron
 ## eMail: neotron@gmail.com
 ## X-Category: Library
 ## X-License: GPLv3
+## Version: 1.0.@project-revision@
 
 LibStub.lua
 LibLogger-1.0\lib.xml
