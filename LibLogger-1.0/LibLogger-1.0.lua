@@ -80,7 +80,7 @@ local logPrefix = {
 }
 
 local MAJOR = "LibLogger-1.0"
-local MINOR = 100000
+local MINOR = 20240724
 
 local lib = LibStub:NewLibrary(MAJOR, MINOR)
 
