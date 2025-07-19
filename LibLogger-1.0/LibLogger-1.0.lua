@@ -80,7 +80,7 @@ local logPrefix = {
 }
 
 local MAJOR = "LibLogger-1.0"
-local MINOR = 20240724
+local MINOR = tonumber("@project-date-integer@") or tonumber(date("%Y%m%d%H%M%S"))
 
 local lib = LibStub:NewLibrary(MAJOR, MINOR)
 
